@@ -1,0 +1,53 @@
+html, body{
+  height: 100%;
+  width: 100%;
+  font: 100% papyrus;
+  background: #EDBB99
+}
+
+p{
+  margin-top: 0;
+  text-align: justify;
+}
+
+h1{
+  font: copperplate;
+  color: #FFF8DC;
+  text-align: center;
+  margin-top: 0px;
+  background-image: linear-gradient(blue, green);
+  
+}
+
+header{
+  background: green;
+}
+
+h2{
+  font: copperplate;
+  color: #FFF8DC;
+  text-align: center;
+  margin-top: 0px;
+  background-image: linear-gradient(green, yellow)
+}
+
+h3{
+  font: copperplate;
+  color: #FFF8DC;
+  text-align: center;
+  background: #DEB887;
+  font-weight: bold;
+  border: 1pt solid black
+}
+
+a:link {
+font-weight: bold;
+text-align: justify;
+color: #DC143C;
+}
+
+footer{
+  text-align: center;
+  font-family: 'Times New Roman', Times, serif;
+  background: black
+}
