@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>replit</title>
+  <!-- gotten from cdnjs -->
+    <script src="https://kit.fontawesome.com/c109e93e52.js" crossorigin="anonymous"></script>
+  
+  <!-- gotten from cdnjs.cloudflare.com -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.1.3/TweenMax.min.js" integrity="sha512-DkPsH9LzNzZaZjCszwKrooKwgjArJDiEjA5tTgr3YX4E6TYv93ICS8T41yFHJnnSmGpnf0Mvb5NhScYbwvhn2w==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <!-- gotten from cdnjs.cloudflare.com -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.1.3/TimelineMax.min.js" integrity="sha512-0xrMWUXzEAc+VY7k48pWd5YT6ig03p4KARKxs4Bqxb9atrcn2fV41fWs+YXTKb8lD2sbPAmZMjKENiyzM/Gagw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+
+</head>
+
+<body>
+
+     <h1 class="second"> <center><strong>  <i class="fa-solid fa-khanda"></i>Fantasy Name Generator<i class="fa-solid fa-khanda"></i></strong> </center></h1>
+
+  <section class="sumbit">
+    
+      <form id="sumbitForm" class="submitSection_form">
+        
+    <h2 class="top" id="formHeading"><center>
+      <label for="currentName" 
+        id="header">Your Current Name:</label><br>
+      
+    <input type="text" 
+      id="submitSection_textInput" 
+      required 
+      placeholder="Current Name">
+      
+      <br></center></h2>
+        <center><button onclick="showName()">Submit</button>
+        </center>
+      </form>
+  </section>
+
+  <h2></h2>
+
+
+    <style>
+    html, body 
+{
+  font: papyrus;
+  height: 100%;
+  width: 100%;
+  background: url(https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/bojnice-castle-1603142898.jpg) no-repeat;
+  background-size: 145%;
+}
+
+
+h1{
+  font-size: 175%;
+  padding: 5px;
+  font: papyrus;
+  color: black;
+}
+
+
+
+  </style>
+  <script>
+  const head = document.querySelector(".second");
+
+const animation = new TimelineMax();
+
+    animation.fromTo(head, 1, { height: "100%"}, {height: "10%", ease: Power2.easeInOut})
+    .fromTo(
+      animation,
+      1.2,
+      {width: "100%" },
+      {width: "80%", ease: Power2.easeInOut}
+    )
+
+    
+    const namesA = {0: "Abraxas", 1: "Adara", 2: "Adrienne", 3: "Aeron", 4: "Aeronwen", 5: "Aeronwy", 6: "Ailbhe", 7: "Aileen", 8: "Aithne", 9: "Adara", 10: "Bacohl", 11: "Badeek", 12: "Baduk", 13: "Baeron",14: "Bahir", 15: "Baily",16: "Balain", 17: "Balain", 18: "Balzar", 19: "Bando", 20: "Cabolus", 21: "Cadate", 22: "Caddor", 23: "Cadria", 24: "Caecilius", 25: "Cael", 26: "Caerroil", 27: "Cahir", 28: "Cainon", 29: "Caldon", 30: "Dacian", 31: "Daedeline", 32: "Daeges", 33: "Daelric", 34: "Daelomiel", 35: "Daemar", 36: "Daeos", 37: "Daereth", 38: "Daersis", 39: "Daerthane", 40: "Eames", 41: "Eandroth", 42: "Eadwine", 43: "Ecotana", 44: "Ebra", 45: "Ebrin", 46: "Ectorios", 47: "Ectya", 48: "Edana", 49: "Edelray", 50: "Fabienne", 51: "Facent", 52: "Fadukes", 53: "Fael", 54: "Faeron", 55: "Faex", 56: "Fafnir", 57: "Fajor", 58: "Falan", 59: "Fallowry", 60: "Gaderian", 61: "Gadra", 62: "Gaedynn", 63: "Gaelle", 64: "Gaetan", 65: "Gafna", 66: "Gagnon", 67: "Gairlie", 68: "Gaiyathri", 69: "Gajanan", 70: "Hadem", 71: "Hadrothil", 72: "Hadden", 73: "Haduma", 74: "Haelus", 75: "Haeron", 76: "Haestra", 77: "Hafiza", 78: "Hagrion", 79: "Haider", 80: "Iambic", 81: "Iarri", 82: "Iddec", 83: "Idene", 84: "Ididnet", 85: "Idona", 86: "Ieserk", 87: "Igon", 88: "Ihate", 89:"Ikarus", 90: "Jacerryl", 91: "Jacinda", 92: "Jadhav", 93: "Jaezred", 94: "Jaelryn", 95: "Jafra", 96: "Jagannath", 97: "Jagdish", 98: "Jagmohan", 99: "Jael", 100: "Kabir", 101: "Kaddok", 102: "Kadiresan", 103: "Kadrax", 104: "Kaelian", 105: "Kaemon", 106: "Kaggen", 107: "Kaharine", 108: "Kahlan", 109: "Kaia", 110: "Ladion", 111: "Laelithar", 112: "Laerdya", 113: "Laertilus",114: "Laianna", 115: "Laitannen", 116: "Laius", 117: "Lakesh", 118: "Laduni", 119: "Laertes", 120: "Madenia", 121: "Madhukar", 122: "Madrale", 123: "Madrot", 124: "Madulara", 125: "Maelys", 126: "Maenalus", 127: "Maeros", 128: "Maevattana", 129: "Maeve", 130: "Naergoth", 131: "Naevan", 132: "Nafrayu", 133: "Nagada", 134: "Nahung", 135: "Naiat", 136: "Naiden", 137: "Naivasha", 138: "Najera", 139: "Najjar", 140: "Oranos", 141: "Orazond", 142: "Orbakh", 143: "Orbert", 144: "Orduna", 145: "Orellana", 146: "Orene", 147: "Omavol", 148: "Onalidan", 149: "Onesimos", 150: "Parviz", 151: "Passant", 152: "Paunoris", 153: "Pazruk", 154: "Palinus", 155: "Pantelis", 156: "Parilius", 157: "Parwen", 158: "Pasiphae", 159: "Passolmo", 160: "Qadriene", 161: "Qamrul", 162: "Quantoul", 163: "Qudsia", 164: "Quennell",165: "Quinqrost", 166: "Quiona", 167: "Quyen", 168: "Quiroz", 169: "Qyburn", 170: "Rahmel", 171: "Rakario", 172: "Ramila", 173: "Ranazar", 174: "Rashedralle", 175: "Rathdaen", 176: "Ravana", 177: "Rawlinswood", 178: "Redwick", 179: "Reluhartis", 180: "Salders", 181: "Salember", 182: "Salish", 183: "Sambril", 184: "Samock", 185: "Samuquan", 186: "Sandalphon", 187: "Santosh", 188: "Sarevok", 189: "Saryn", 190: "Taeron", 191: "Talindurum", 192: "Tamaranth", 193: "Tandon", 194: "Tannemen",195: "Tansaburon", 196: "Taradale", 197: "Santosh", 198: "Tardisite", 199: "Tarlin", 200: "Ulda", 201: "Ulorian", 202: "Umandiira", 203: "Undiok", 204: "Ungulisar", 205: "Uraloria", 206: "Urhun", 207: "Urunthil", 208: "Uvayn", 209: "Uvelas", 210: "Valnedra", 211: "Valygar", 212: "Vandlo", 213: "Vaphoron", 214: "Varisia", 215: "Varundil", 216: "Vattana", 217: "Vaulkra", 218: "Vegolerrus", 219: "Velgess", 220: "Wendamyr", 221: "Wenz", 222: "Westernesse", 223: "Whistledowm", 224: "Wicklow", 225: "Widfrond", 226: "Willandra", 227: "Winola", 228: "Wolsey", 229: "Wulfstan", 230: "Xavion", 231: "Xeno", 232: "Xengsu", 233: "Ximena", 234: "Xiomara", 235: "Xiuyun", 236: "Xondual", 237: "Xorosia", 238: "Xult", 239: "Xyomara", 240: "Yarumal", 241: "Yavil", 242: "Yefar", 243: "Yelentos", 244: "Yendari", 245: "Yevo", 246: "Yohadric", 247: "Yormwell", 248: "Yosvani", 249: "Ysona", 250: "Zanoska", 251: "Zardra", 252: "Zarovun", 253: "Zavalla", 254: "Zebulon", 255: "Zelfina", 256: "Zerielle", 257: "Zharbroah", 258: "Zipaquira", 259: "Zurishalen"}
+
+
+const generateFantasyName = () => {
+      let randomFirst = Math.floor(Math.random() * 260)
+      let randomLast = Math.floor(Math.random() * 260)
+      var namesArray = [namesA[randomFirst], namesA[randomLast]]
+      return namesArray;
+    }
+
+
+function showName()
+{
+  const namesArray = generateFantasyName();
+var currentName = document.getElementById("submitSection_textInput").value;
+  window.alert("Your current name is " + currentName + " and your new name is " + namesArray);
+} 
+  </script>
+
+</body>
+
+</html>
